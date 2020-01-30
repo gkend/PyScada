@@ -18,8 +18,9 @@ Dependencies
 ------------
 
 
-Debian 9, Raspbian
-^^^^^^^^^^^^^^^^^^^^
+
+Debian 10, Debian 9,  Raspbian
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -28,7 +29,12 @@ Debian 9, Raspbian
     apt-get -y upgrade
     # if you use MariaDB/MySQL as Database system (recommend)
     apt-get -y install mariadb-server python3-mysqldb
-    apt-get install -y python3-pip libhdf5-100 libhdf5-dev python3-dev nginx
+
+    # Debian 9 
+    # apt-get install -y python3-pip libhdf5-100 libhdf5-dev python3-dev nginx
+
+    # Debian 10 
+    apt-get install -y python3-pip libhdf5-103 libhdf5-dev python3-dev nginx
 
     pip3 install gunicorn
     pip3 install pyserial

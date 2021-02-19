@@ -90,7 +90,10 @@ class ExportTask(models.Model):
         if hasattr(settings, 'PYSCADA_EXPORT'):
             if 'output_folder' in settings.PYSCADA_EXPORT:
                 backup_file_path = os.path.expanduser(settings.PYSCADA_EXPORT['output_folder'])
-        return '<a href="%s">%s</a>' % (self.filename.replace(backup_file_path, '/measurement'),
-                                        self.filename.replace(backup_file_path, '/measurement'))
-
+        if self.filename is None: 
+            return '<p>File not extist</p>' 
+        else: 
+            filename = self.filename.replace(backup_file_path, '/measurement')
+        return '<a href="%s">%s</a>' % (filename, filename) 
+    
     downloadlink.allow_tags = True

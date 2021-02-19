@@ -94,6 +94,6 @@ class ExportTask(models.Model):
             return '<p>File not extist</p>' 
         else: 
             filename = self.filename.replace(backup_file_path, '/measurement')
-        return '<a href="%s">%s</a>' % (filename, filename) 
+            return '<a href="%s">%s</a>' % (filename, filename) 
     
     downloadlink.allow_tags = True
